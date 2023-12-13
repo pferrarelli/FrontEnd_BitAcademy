@@ -1,0 +1,10 @@
+<div *ngIf="task">
+    <ul>
+        <li>titolo: {{task.titolo}}</li>
+        <li>descrizione: {{task.descrizione}}</li> 
+        <li>dipendente: {{task.dipendente.nome + " " + task.dipendente.cognome}}</li>
+        <li>stato: {{task.stato}}</li>
+        <li>data inizio: {{task.dataInizio}}</li>
+        <li>data fine: {{task.dataFine}}</li>
+    </ul>
+</div>

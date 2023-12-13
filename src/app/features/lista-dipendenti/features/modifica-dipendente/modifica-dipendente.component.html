@@ -1,0 +1,13 @@
+<form style="margin-top:5%" [formGroup]="form" (ngSubmit)="modifica()">
+    <h1>Modifica dipendente</h1>
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Cognome</mat-label>
+        <input matInput formControlName="cognome">
+    </mat-form-field>
+    <hr />  
+    <button mat-stroked-button type="submit" color="primary" [disabled]="!form.valid">Modifica</button>
+</form>

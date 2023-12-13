@@ -1,0 +1,35 @@
+<form style="margin-top:5%" [formGroup]="form" (ngSubmit)="modifica()">
+    <h1>Modifica Task</h1>
+    <mat-form-field>
+        <mat-label>Titolo</mat-label>
+        <input matInput formControlName="titolo">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Descrizione</mat-label>
+        <input matInput formControlName="descrizione">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Dipendente</mat-label>
+        <mat-select formControlName="id_dipendente">
+            <mat-option [value]="dipendente.id_dipendente" *ngFor="let dipendente of dipendenti">{{dipendente.nome + " " + dipendente.cognome}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Data inizio</mat-label>
+        <input matInput formControlName="dataInizio">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Data fine</mat-label>
+        <input matInput formControlName="dataFine">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Stato</mat-label>
+        <mat-select formControlName="stato">
+            <mat-option [value]="stato.CREATO">CREATO</mat-option>
+            <mat-option [value]="stato.IN_PROGRESS">IN PROGRESS</mat-option>
+            <mat-option [value]="stato.FINITO">FINITO</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <hr />  
+    <button mat-stroked-button type="submit" color="primary" [disabled]="!form.valid">Modifica</button>
+</form>
