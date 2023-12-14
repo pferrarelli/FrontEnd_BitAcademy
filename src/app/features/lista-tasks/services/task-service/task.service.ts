@@ -48,7 +48,7 @@ export class TaskService {
       id_task: number): Observable<void> {
 
     const params = new HttpParams().appendAll({ titolo, descrizione, stato, dataInizio, dataFine, id_dipendente, id_task });
-    return this.http.put<void>(this.taskURI + 'updateparams', {...httpOptions, params});
+    return this.http.put<void>(this.taskURI + 'updateparams', {}, {...httpOptions, params});
   }
 
   //DELETE
